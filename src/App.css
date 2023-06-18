@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*{
+  margin: 0px;
+  padding: 0px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.userdata-input{
+  width: 100%;
+  padding: 1rem;
+  border: none;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.sent-user-data{
+  width: 100%;
+  height: 76vh;
+  background-color: rgb(242, 249, 255);
+  overflow-y:scroll;
+}
+ .filter-data-div > h4:hover{
+  background-color: rgb(35, 101, 187);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.show-user-data{
+  width: 80%;
+  height: auto;
+  /* box-shadow: 0 0 10px black; */
+  background-color: white;
+  border:  1px solid gray;
+  border-radius: 5px;
+  padding: 10px;
+  display: flex;
+  gap: 0.7rem;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.show-user-data-list{
+  display: flex;
+  width: 100%;
+}
+.show-user-data button{
+  background-color: transparent;
+  border: none;
+  
+  justify-content: flex-end;
+  
+}
+.input-div{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0px;
+  /* box-shadow: 0 0 10px black; */
+  border: 1px solid gray;
+  border-radius: 10px;
+}
+.input-div-one{
+  width: 100%;
+  height: 8vh;
+  background-color: rgb(229, 229, 229);
+  border: 1px solid gray;
+  display: flex;
+  gap: 15px;
+}
+.input-div-one > div{
+  margin: 15px 0 5px 15px;
+  
+}
+.input-div-three{
+  width: 100%;
+  height: 8vh;
+  background-color: transparent;
+  border: 1px solid gray;
+  display: flex;
+  gap: 20px;
+}
+.input-div-three > div{
+  margin: 15px 0 0 15px;
+}
+.input-div-three button{
+  background-color: transparent;
+  border: none;
+}
+.send-button{
+  padding: 5px;
+}
+/* width:"30%" , height:"100px",boxShadow:"0 0 10px black",margin:"0 auto",overflowY:"scroll" */
+.filter-data-div{
+  width:30%;
+  height:130px;
+  background-color: white;
+  /* box-shadow:0 0 10px black; */
+  border: 1px solid gray;
+  padding: 0px;
+  border-radius: 5px;
+  margin:0 0 0 2%;
+  overflow-y:scroll;
+  position: absolute;
+  bottom: 16vh;
+  z-index: 100;
+  cursor: pointer;
+  transition: 2s;
+}
+.filter-data{
+  display: flex;
+  gap: 15px;
+  margin: 5px
+}
+.display-none{
+  display: none;
 }
