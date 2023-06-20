@@ -59,7 +59,12 @@ const UserData = () => {
           items.map((ele, idx) => {
             return (
               <div className='show-user-data'>
-                <div className='show-user-data-list'><Avatar sx={{ width: 24, height: 24, bgcolor: acolor[idx % 8] }} variant="rounded"> {ele.value.slice(0, 1)}</Avatar> &nbsp;&nbsp; <h4 style={{ float: "left" }} key={idx}>{ele.value}</h4> &nbsp;&nbsp; {ele.time} </div>
+                <div className='show-user-data-list'>
+                <Avatar sx={{ width: 24, height: 24, bgcolor: acolor[idx % 8] }} variant="rounded"> {ele.value.slice(0, 1)}</Avatar>
+                 &nbsp;&nbsp; 
+                 <h3 style={{ float: "left" }} key={idx}> {ele.value[0]===ele.value[1] ? ele.value.slice(1) : ele.value}</h3>&nbsp;
+                 <p>🟢</p>
+                 &nbsp;&nbsp; {ele.time} </div>
                 <div > <button onClick={() => deleteData(ele.id)}><DeleteOutlineIcon /></button></div>
               </div>
             )
@@ -72,13 +77,15 @@ const UserData = () => {
             data.filter((ele) => {
               if (search === "") {
                 return ele
-              } else if (ele.name.toLowerCase().includes(search)) {
+              } else if (ele.username.toLowerCase().includes(search.toLowerCase())) {
                 return ele
               }
             }).map((ele, idx) => {
               return (
                 <h4 onClick={(e) => {
                   setBoolName(false)
+                  // setSearch(e.target.textContent)
+                  
                   setInputValue(e.target.textContent)
                   setPopup(false)
                 }}>
@@ -108,12 +115,14 @@ const UserData = () => {
           <div>
             <input
               className="userdata-input"
-              value={boolName ? search : inputValue}
+              value={boolName && inputValue==="" ? search : inputValue}
               placeholder='Jot somthing down'
               type='text'
               onChange={(e) => {
                 setBoolName(true);
+                
                 setSearch(e.target.value)
+                setInputValue("");
                 setPopup(true)
               }}
             />
